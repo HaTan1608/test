@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+.header {
+  width: 100%;
+  height: 120px;
+  background: $black;
+  color: $white;
+  position: relative;
+
+  &__content {
+    @include align(flex, space-between, center, 100%);
+  }
+  &__logo {
+    width: 50%;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+
+    font-weight: 900;
+    @include responsive(large) {
+      width: 40%;
+    }
+    @include responsive(medium) {
+      width: 35%;
+    }
+    @include responsive(small) {
+      width: 100%;
+      text-align: center;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__nav {
+    width: 50%;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include responsive(large) {
+      width: 65%;
+    }
+    @include responsive(medium) {
+      width: 70%;
+    }
+    @include responsive(small) {
+      z-index: 4;
+      transition: all 0.3s linear;
+      position: fixed;
+      display: block;
+      width: 65%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: $silverDark;
+      margin-left: 0;
+      &--open {
+        transform: translateX(0);
+      }
+      &--close {
+        transform: translateX(-100%);
+      }
+    }
+    @include responsive(xsmall) {
+      margin-left: 0;
+      z-index: 4;
+      transition: all 0.3s linear;
+      position: fixed;
+      display: block;
+      width: 65%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: $silverDark;
+      &--open {
+        transform: translateX(0);
+      }
+      &--close {
+        transform: translateX(-100%);
+      }
+    }
+    ul {
+      :nth-child(4) {
+        border-left: solid 1px white;
+        @include responsive(small) {
+          border-left: none;
+        }
+      }
+      @include responsive(small) {
+        margin: 10rem 0 5rem 3rem;
+      }
+    }
+    ul li {
+      display: inline-block;
+      padding: 0px 3%;
+      @include responsive(small) {
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+    ul li a {
+      color: $white;
+      &:hover {
+        color: #ffca55;
+      }
+    }
+  }
+}
