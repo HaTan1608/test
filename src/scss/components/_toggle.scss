@@ -11,7 +11,7 @@
   display: none;
 
   @include responsive(small) {
-    @include position(fixed, 4.5rem, 3rem, null, null, null, null);
+    @include position(absolute, 4.5rem, 3rem, null, null, null, null);
     span:nth-child(1) {
       @include toggleSpans($white, 2.5rem, 0.3rem, null);
     }
@@ -33,7 +33,7 @@
     span:nth-child(3) {
       @include toggleSpans($white, 2.5rem, 0.3rem, 0.5rem);
     }
-    @include position(fixed, 4.5rem, 3rem, null, null, null, null);
+    @include position(absolute, 4.5rem, 3rem, null, null, null, null);
     display: block;
   }
 }
